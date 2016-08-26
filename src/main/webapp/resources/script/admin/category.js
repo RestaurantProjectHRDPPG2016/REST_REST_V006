@@ -30,7 +30,6 @@ var app = angular.module('myApp', []);
 app.controller('logoutCtrl', function($scope,$window,$location){
 	$scope.logout = function(){
 		 $window.location.href="/logout";
-		 if
 	}
 });
 
