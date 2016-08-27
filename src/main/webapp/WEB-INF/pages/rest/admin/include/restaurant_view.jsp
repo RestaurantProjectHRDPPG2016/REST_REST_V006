@@ -3,15 +3,12 @@
 <link rel="stylesheet" type="text/css"
 				href="${pageContext.request.contextPath}/resources/static/jQuery.filer/fancybox/source/jquery.fancybox.css?v=2.1.5"/>	
 				<script src="${pageContext.request.contextPath}/resources/static/jQuery.filer/fancybox/source/jquery.fancybox.js?v=2.1.5"></script>
-		
-			
 				<script src="${pageContext.request.contextPath}/resources/static/jQuery.filer/fancybox/jquery.mousewheel-3.0.6.pack.js"></script>
 				
 				<link rel="stylesheet" type="text/css"
 				href="${pageContext.request.contextPath}/resources/static/jQuery.filer/fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />	
 				
 				<script src="${pageContext.request.contextPath}/resources/static/jQuery.filer/fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
-				
 									<link rel="stylesheet" type="text/css"
 				href="${pageContext.request.contextPath}/resources/static/jQuery.filer/css/themes/jquery.filer-dragdropbox-theme.css">
 	<link rel="stylesheet" type="text/css"

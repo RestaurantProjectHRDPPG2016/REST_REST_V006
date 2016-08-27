@@ -27,16 +27,6 @@ $(document).ready(function() {
 });
 
 var app = angular.module('myApp', []);
-app.controller('logoutCtrl', function($scope,$window,$location){
-	$scope.logout = function(){
-		if (requiresAuthentication(normalizedRefererUrl, authentication)) {
-		    response.sendRedirect(request.getContextPath()); // home page
-		} else {
-		    response.sendRedirect(refererUrl); // or normalizedUrl
-		}
-	}
-});
-
 app.controller('adminCtrl', function($scope, $http, $window, $rootScope) {
 
 	// TODO: define base url
@@ -555,9 +545,7 @@ app.controller('restCtrl',function($scope, $http, $window, $rootScope) {
 //								return;
 //							}
 //						});
-//						
-					
-						
+
 						$scope.sampleRest = [];
 						$scope.sampleMenu = [];
 						 
@@ -725,7 +713,7 @@ app
 				  }
 					
 				  $scope.addtoFaorite = function(r_id){
-			    		if(user_id == ""){
+			    		if(isLogin=="false"){
 			    			$window.location.href="/login";
 			    		}
 			    		rest_id =r_id;
@@ -733,6 +721,8 @@ app
 			    }
 				  $scope.saveAddToFavorite = function() {
 						 u_id=user_id;
+						 alert("userID:"+userid);
+						 alert("U_ID"+u_id);
 						 r_id = rest_id;
 		    			$http({
 		    				url : 'http://localhost:8888/addtofavorite',
@@ -896,26 +886,24 @@ app.controller('MyTypeCtrl', function($scope, $http, $window, $rootScope) {
 
 app.controller('addToFavoriteCtrl',function($scope, $http, $window, $rootScope) {
 	
-	RESTAURANT.getRestaurantByAddToFavorite = function(id) {
+	$scope.getRestaurantByAddToFavorite = function(id) {
+		alert(id);
 		$http({
-			url : 'http://localhost:8888/restaurant/user/save' + id,
+			url : 'http://localhost:8888/restaurant/user/save/' + id,
 			params : $scope.filter,
 			method : 'GET'
 		}).then(function(response) {
-			$scope.addToFavorite = response.data.DATA;
-			RESTAURANT.loadPagination(response.data);
-			if ($scope.addToFavorite.length <= 0) {
+			console.log(response);
+			$scope.myaddToFavorite = response.data.DATA;
+			if ($scope.myaddToFavorite.length <= 0) {
 				$("#notfound").show();
 			}
+			$window.location.href="/user";
 		}, function(response) {
+			console.log(response);
 		});
 	}
-	// TODO: Reload data again
-	$scope.reload = function(filter) {
-		$scope.filter = filter;
-		RESTAURANT.getRestaurantByAddToFavorite(id);
-	};
-	RESTAURANT.getRestaurantByAddToFavorite(id);
+
 });
 
 //				add and update

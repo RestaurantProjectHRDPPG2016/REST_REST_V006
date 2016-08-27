@@ -48,12 +48,14 @@ public class WebClientSecurityConfiguration extends WebSecurityConfigurerAdapter
 		
 		//TODO: WANT TO USE SPRING SECURITY LOGIN FORM
 		http.formLogin()
-			.loginPage("/login") 			// CUSTOM THE OWN LOGIN PAGE
+			.loginPage("/login") 
+			// CUSTOM THE OWN LOGIN PAGE
 			.usernameParameter("email")		// CUSTOM THE 'username'  default ===> email
 			.passwordParameter("password")
 			.successHandler(successHandler)
 			.failureUrl("/login?error")
-			.permitAll();
+			.permitAll()
+			;
 		
 		http.sessionManagement()
 			.sessionAuthenticationErrorUrl("/login")

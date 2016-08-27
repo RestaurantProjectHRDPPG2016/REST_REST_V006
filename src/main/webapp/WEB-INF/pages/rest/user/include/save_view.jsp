@@ -1,22 +1,23 @@
- <!-- ADD To FAvorite -->
+<%--  <!-- ADD To FAvorite -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!-- detail -->
-<div class="container margintop5">
+<div class="container margintop5" ng-controller="addToFavoriteCtrl"> 
 	<div class="row panel-group">
 		<div class="panel panel-info">
 			<div class="panel-heading text-center">ព័តមានលំអិតរបស់ភោជនីយដ្ខានដែលបានរក្សាទុក</div>
 			<div class="panel-body">
-				<div ng-controller="addToFavoriteCtrl">
-					<div class="row" ng-repeat="r in addToFavorite">
-						<div class="col-md-3">
+				<div>
+					<div class="row" ng-repeat="m in myaddToFavorite">
+<!-- 						<div class="col-md-3">
 									<img ng-repeat="image in r.images | limitTo:1"
 										style="width: 200px; height: 200px; background: #dddddd;"
 										class="fab" src="http://localhost:8888{{image.url}}" alt="" />
-							</div>
+							</div> -->
 							<div class="col-md-9">
-							<a href="/detail/{{r.id}}">
-									<h1>{{r.name}}</h1>
+							<a href="/detail/{{m.id}}">
+									<h1>{{m.name}}</h1>
+								</a>
 									<p> {{r.desc}}</p>
 									<p>
 									<span> #{{r.home}} </span>
@@ -36,12 +37,10 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> 
 </div>
 <!-- /container -->
-
-
-<link rel="stylesheet"
+ <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/owner/lightbox.css">
 
 <script
@@ -52,8 +51,15 @@
 
 <script
 	src="${pageContext.request.contextPath}/resources/script/owner/lightbox.js"></script>
-
+ --%>
 <script>
-		rest_id = "${id}";
+		user_id = "${id}";
 		
-</script>
+</script>  
+
+ 
+<div class="container margintop5" ng-controller="addToFavoriteCtrl"> 
+<div ng-repeat="m in myaddToFavorite">
+	<h1>NAME =={{m.name}}</h1>
+</div>
+</div>

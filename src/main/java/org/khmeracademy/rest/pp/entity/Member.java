@@ -13,6 +13,7 @@ public class Member implements UserDetails {
 	 */
 	private static final long serialVersionUID = 1L;
 	private int user_id;
+	private String name;
 	private String username;
 	private String password;
 	private String email;
@@ -44,6 +45,12 @@ public class Member implements UserDetails {
 	}
 	public void setRoles(List<Role> roles) {
 		this.roles = roles;
+	}
+	public String getName() {
+		return username;
+	}
+	public void setName(String name) {
+		this.name = name;
 	}
 	@Override
 	public String toString() {
@@ -78,6 +85,7 @@ public class Member implements UserDetails {
 	public String getUsername() {
 		return email;
 	}
+	
 	
 
 	
