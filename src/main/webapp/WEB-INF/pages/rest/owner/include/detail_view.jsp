@@ -53,7 +53,7 @@
 								<center>
 									<span class="btn btn-sm btn-primary">Like</span> 
 										<a href="/locations/{{r.id}}" id="map">
-											<span class="btn btn-default btn-sm">Visit Map</span>
+											<span id="viewMap" class="btn btn-default btn-sm">Visit Map</span>
 										</a> 
 									<span class="btn btn-default btn-sm" ng-click="addtoFaorite(r.id)">Add to favorite &nbsp
 										<span class="glyphicon glyphicon-bookmark"></span>

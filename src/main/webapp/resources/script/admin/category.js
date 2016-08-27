@@ -29,7 +29,11 @@ $(document).ready(function() {
 var app = angular.module('myApp', []);
 app.controller('logoutCtrl', function($scope,$window,$location){
 	$scope.logout = function(){
-		 $window.location.href="/logout";
+		if (requiresAuthentication(normalizedRefererUrl, authentication)) {
+		    response.sendRedirect(request.getContextPath()); // home page
+		} else {
+		    response.sendRedirect(refererUrl); // or normalizedUrl
+		}
 	}
 });
 
@@ -682,8 +686,7 @@ app
 							method : 'GET',
 						}).then(function(response) {
 							$scope.restByID = response.data.DATA;
-							init_map($scope.restByID[0].latitude, $scope.restByID[0].longitude,$scope.restByID[0].name,$scope.restByID[0].province,$scope.restByID[0].street);
-
+								init_map($scope.restByID[0].latitude, $scope.restByID[0].longitude,$scope.restByID[0].name,$scope.restByID[0].province,$scope.restByID[0].street);
 						}, function(response) {
 							alert('failed To call all data');
 						});
@@ -722,13 +725,28 @@ app
 				  }
 					
 				  $scope.addtoFaorite = function(r_id){
-			    		if(user_id== ""){
-			    			window.location.href="/login";
+			    		if(user_id == ""){
+			    			$window.location.href="/login";
 			    		}
-			    		alert(user_id);
-			    		alert(r_id);
-			    		$scope.saveAddToFavorite (user_id,r_id);
+			    		rest_id =r_id;
+			    		$scope.saveAddToFavorite();
 			    }
+				  $scope.saveAddToFavorite = function() {
+						 u_id=user_id;
+						 r_id = rest_id;
+		    			$http({
+		    				url : 'http://localhost:8888/addtofavorite',
+		    				method : 'POST',
+		    				data : {
+		    					'm_id' : user_id,
+		    					'r_id' : r_id
+		    				}
+		    			}).then(function(response) {
+		    				alert("Success add to favorite");
+		    			}, function(response) {
+		    				alert('failed');
+		    			});
+		    		}
 			    
 				  
 				  
@@ -877,20 +895,6 @@ app.controller('MyTypeCtrl', function($scope, $http, $window, $rootScope) {
 //***************USER ADD To Favorite Ctrl*******
 
 app.controller('addToFavoriteCtrl',function($scope, $http, $window, $rootScope) {
-	$scope.saveAddToFavorite = function() {
-		$http({
-			url : 'http://localhost:8888/addtofavorite',
-			method : 'POST',
-			data : {
-				'm_id' : user_id,
-				'r_id' : $scope.rest_type
-			}
-		}).then(function(response) {
-			$scope.saveAddToFavorite();
-		}, function(response) {
-			alert('failed');
-		});
-	}
 	
 	RESTAURANT.getRestaurantByAddToFavorite = function(id) {
 		$http({

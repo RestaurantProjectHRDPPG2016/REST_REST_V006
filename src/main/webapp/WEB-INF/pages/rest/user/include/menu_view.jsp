@@ -16,8 +16,7 @@
    <sec:authorize access="isAuthenticated()">
   	 <div id="mydiv"></div>
    	<li><a href="/user/<sec:authentication property="principal"/>"><sec:authentication property="principal.username"/></a></li>
-   		
-    			<script>
+    	<script>
 		var user_id='<sec:authentication property="principal.userid"/>';
 	</script>
 	</sec:authorize>
@@ -28,7 +27,7 @@
         <li><a href="/signup"><span class="glyphicon glyphicon-user"></span> ចុះឈ្មោះ</a></li>
         <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> ចូលប្រើ</a></li>
          <sec:authorize access="isAuthenticated()">
-   		<li style="cursor:pointer"><a ng-click="logout()"><span class="glyphicon glyphicon-log-out"></span> ចាកចេញ</a></li>
+   		<li style="cursor:pointer"><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> ចាកចេញ</a></li>
 	</sec:authorize>
 	</ul>
     </div>

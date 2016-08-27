@@ -52,6 +52,18 @@ public class WebClientSecurityConfiguration extends WebSecurityConfigurerAdapter
 			.usernameParameter("email")		// CUSTOM THE 'username'  default ===> email
 			.passwordParameter("password")
 			.successHandler(successHandler)
+			.failureUrl("/login?error")
+			.permitAll();
+		
+		http.sessionManagement()
+			.sessionAuthenticationErrorUrl("/login")
+			.maximumSessions(1)
+			.maxSessionsPreventsLogin(true)
+			.expiredUrl("/login");
+		http.logout()
+			.logoutUrl("/logout")
+			.logoutSuccessUrl("/")
+			.invalidateHttpSession(true)
 			.permitAll();
 	}
 	
