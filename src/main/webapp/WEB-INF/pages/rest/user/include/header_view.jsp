@@ -7,7 +7,7 @@
 <head>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>SabayNham</title>
+<title>Fresh Menu</title>
 <meta name="description" content="">
 <meta name="author" content="">
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -47,12 +47,5 @@
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/script/user/ui_main.js" type="text/javascript"></script>
 <script src="${pageContext.request.contextPath}/resources/static/js/jquery.bootpage.min.js" type="text/javascript"></script>
-
-<%-- <sec:authorize access="isAuthenticated()"> --%>
-<%-- 	<sec:authentication property="principal" var="id"/> --%>
-<%-- </sec:authorize> --%>
-<!-- <script> -->
-<%-- 	var userId = '<sec:authentication property="principal" var="id"/>'; --%>
-<!-- </script> -->
 </head>
 <body>

@@ -1,4 +1,36 @@
 /* angular JS Star */
+.active{
+	background:#eeeeee;
+}
+.active span,a{
+	color:#000000 !important;
+	opacity:1 !important;
+	
+}
+.unactive a,span{
+	color:#ffffff !important;
+}
+.collapse ul li a,span{
+	color:#ffffff;
+}
+#profile{
+	background:#dddddd;
+}
+#profile li a{
+	color:#000000;
+}
+.navbar-header a:hover{
+	color:#000000 !important;
+	opacity:1 !important;
+}
+.collapse ul li:hover span{
+	color:#000000 !important;
+	opacity:1 !important;
+}
+.collapse ul li:hover a{
+	color:#000000 !important;
+	opacity:1 !important;
+}
 
 /* ***************** */
 /* slide */

@@ -1,13 +1,7 @@
 <style>
 	.myfooter a{
-		font-size: 20px;
+		font-size: 16px;
 	}
-	.myfooter a:hover{
-		font-size: 22px;
-		text-decoration:underline;
-		color: blue;
-	}
-	
 </style>
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"

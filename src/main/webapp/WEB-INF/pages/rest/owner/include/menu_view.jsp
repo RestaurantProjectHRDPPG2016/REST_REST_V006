@@ -43,17 +43,22 @@
 							<span style="font-size: 13px;">Tel: {{tele.tel}}</span>
 						</div>
 					</a>
+						
+							<span ng-repeat="rating in ratings"> 
+							 <span star-rating
+								rating-value="rating.current" max="rating.max"
+								on-rating-selected="getSelectedRating(rating)"></span>
+							</span> 
+				
 					<div style="margin-bottom: 10px;">
-<!-- 						<iframe
-							src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fkplous%2F&width=450&layout=standard&action=like&size=small&show_faces=false&share=false&height=35&appId=1489855064642155"
-							width="450" height="35" style="border: none; overflow: hidden"
-							scrolling="no" frameborder="0" allowTransparency="true"></iframe> -->
-						<!-- <a href="/locations/{{r.id}}"><span class="btn btn-default btn-sm">Visit
-								Map</span></a> -->
 					</div>
 				</div>
 				</div>
 				</div>
+				</div>
+								<!-- No Result -->
+				<div class="col-md-12" id="notfound" style="display:none;">
+				<img class="img-responsive" src="${pageContext.request.contextPath}/resources/upload/playlist/img/no-result.png"/>
 				</div>
 				</div>
 				<!-- ************************ -->
@@ -96,18 +101,26 @@
 							<span style="font-size: 13px;">Tel: {{tele.tel}}</span>
 						</div>
 					</a>
+					
+							<span ng-repeat="rating in ratings"> <span star-rating
+								rating-value="rating.current" max="rating.max"
+								on-rating-selected="getSelectedRating(rating)"></span>
+							</span> 
+			
 					<div style="margin-bottom: 10px;">
 					</div>
 				</div>
 				</div>
 				</div>
 				</div>
-				</div>
-				<!-- ************************ -->
-				<!-- No Result -->
+				
+								<!-- No Result -->
 				<div class="col-md-12" id="notfound" style="display:none;">
 				<img class="img-responsive" src="${pageContext.request.contextPath}/resources/upload/playlist/img/no-result.png"/>
 				</div>
+				</div>
+				<!-- ************************ -->
+
 				
 				
 				</div>

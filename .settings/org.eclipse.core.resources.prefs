@@ -7,6 +7,7 @@ encoding//src/main/webapp/WEB-INF/pages/rest/owner/include/menu_view.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/pages/rest/owner/include/search_view.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/pages/rest/user/include/category_view.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/pages/rest/user/include/footer_view.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/pages/rest/user/include/mymenu_views.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/pages/rest/user/include/search_view.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/pages/rest/user/include/user_login_view.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/pages/rest/user/include/user_signup_view.jsp=UTF-8

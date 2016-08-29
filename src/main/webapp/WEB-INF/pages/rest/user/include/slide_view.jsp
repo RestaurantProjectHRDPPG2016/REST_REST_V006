@@ -108,11 +108,6 @@
         </div>
         <!-- Jssor Slider End -->
     </div>
-    
-    <script src="docs.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="${pageContext.request.contextPath}/resources/static/slidejssor/ie10-viewport-bug-workaround.js"></script>
-
     <!-- jssor slider scripts-->
     <!-- use jssor.slider.debug.js for debug -->
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/static/slidejssor/js/jssor.slider.mini.js"></script>

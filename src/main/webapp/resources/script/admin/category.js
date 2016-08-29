@@ -659,7 +659,6 @@ app.controller('restCtrl',function($scope, $http, $window, $rootScope) {
 							alert('failed');
 						})
 					}
-					
 				});
 
 app
@@ -716,19 +715,19 @@ app
 			    		if(isLogin=="false"){
 			    			$window.location.href="/login";
 			    		}
-			    		rest_id =r_id;
-			    		$scope.saveAddToFavorite();
+			    		
+			    			rest_id =r_id;
+				    		$scope.saveAddToFavorite();
+			    		
+			    		
 			    }
 				  $scope.saveAddToFavorite = function() {
-						 u_id=user_id;
-						 alert("userID:"+userid);
-						 alert("U_ID"+u_id);
-						 r_id = rest_id;
+					  r_id=rest_id;
 		    			$http({
 		    				url : 'http://localhost:8888/addtofavorite',
 		    				method : 'POST',
 		    				data : {
-		    					'm_id' : user_id,
+		    					'm_id' : userId,
 		    					'r_id' : r_id
 		    				}
 		    			}).then(function(response) {
@@ -736,10 +735,9 @@ app
 		    			}, function(response) {
 		    				alert('failed');
 		    			});
-		    		}
-			    
+		    		} 
 				  
-				  
+
 				})
 .directive('starRating', function () {
     return {
@@ -843,7 +841,6 @@ app.controller('MyCatCtrl', function($scope, $http, $window, $rootScope) {
 			if ($scope.MyCategories.length <= 0) {
 				$("#notfound").show();
 			}
-
 		}, function(response) {
 		});
 	}
@@ -854,6 +851,28 @@ app.controller('MyCatCtrl', function($scope, $http, $window, $rootScope) {
 		RESTAURANT.getRestaurantByCategory(cat_id);
 	};
 	RESTAURANT.getRestaurantByCategory(cat_id);
+	
+//	****************Star Rating*********
+	$scope.rating = 0;
+    $scope.ratings = [ {
+        current: 3,
+        max: 5
+    }];
+
+    $scope.getSelectedRating = function (rating) {
+    }
+    
+    $scope.setMinrate= function(){
+       $scope.ratings = [{
+        current: 1,
+        max: 5
+    }];
+    }
+ 
+  $scope.sendRate = function(){
+    alert("Thanks for your rates!\n\nFirst Rate: " + $scope.ratings[0].current+"/"+$scope.ratings[0].max
+    +"\n"+"Second rate: "+ $scope.ratings[1].current+"/"+$scope.ratings[0].max)
+  }	
 });
 
 app.controller('MyTypeCtrl', function($scope, $http, $window, $rootScope) {
@@ -885,11 +904,11 @@ app.controller('MyTypeCtrl', function($scope, $http, $window, $rootScope) {
 //***************USER ADD To Favorite Ctrl*******
 
 app.controller('addToFavoriteCtrl',function($scope, $http, $window, $rootScope) {
-	
-	$scope.getRestaurantByAddToFavorite = function(id) {
-		alert(id);
+	var userID;
+if(userId!=undefined){
+	$scope.getRestaurantByAddToFavorite = function(userId) {
 		$http({
-			url : 'http://localhost:8888/restaurant/user/save/' + id,
+			url : 'http://localhost:8888/restaurant/user/save/' + userId,
 			params : $scope.filter,
 			method : 'GET'
 		}).then(function(response) {
@@ -898,12 +917,27 @@ app.controller('addToFavoriteCtrl',function($scope, $http, $window, $rootScope) 
 			if ($scope.myaddToFavorite.length <= 0) {
 				$("#notfound").show();
 			}
-			$window.location.href="/user";
+		
 		}, function(response) {
 			console.log(response);
 		});
+		
 	}
-
+	$scope.getRestaurantByAddToFavorite(userId);
+}
+$scope.deleteAddToFavorite = function(id) {
+	alert(id);
+	$http({
+		url : 'http://localhost:8888/addtofavorite/' + id,
+		method : 'DELETE'
+	}).then(function(objcat) {
+		alert("Success Unsave favorite");
+		$scope.getRestaurantByAddToFavorite(userId);
+	}, function(response) {
+		alert('failed');
+	})
+}
+	
 });
 
 //				add and update
