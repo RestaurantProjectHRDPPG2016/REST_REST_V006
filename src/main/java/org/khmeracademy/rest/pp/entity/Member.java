@@ -13,13 +13,13 @@ public class Member implements UserDetails {
 	 */
 	private static final long serialVersionUID = 1L;
 	private int user_id;
+	@SuppressWarnings("unused")
 	private String name;
 	private String username;
 	private String password;
 	private String email;
 	private String status;
-	private List<Role> roles;
-	
+	private int roles;
 	
 	public int getUserid() {
 		return user_id;
@@ -40,27 +40,14 @@ public class Member implements UserDetails {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	public List<Role> getRoles() {
-		return roles;
-	}
-	public void setRoles(List<Role> roles) {
-		this.roles = roles;
-	}
+	
 	public String getName() {
 		return username;
 	}
 	public void setName(String name) {
 		this.name = name;
 	}
-	@Override
-	public String toString() {
-		return "User [userid=" + user_id + ", username=" + username + ", password=" + password + ", email=" + email
-				+ ", status=" + status + ", roles=" + roles + "]";
-	}
-	@Override
-	public Collection<? extends GrantedAuthority> getAuthorities() {
-		return roles;
-	}
+	
 	@Override
 	public boolean isAccountNonExpired() {
 		return true;
@@ -85,8 +72,14 @@ public class Member implements UserDetails {
 	public String getUsername() {
 		return email;
 	}
-	
-	
-
-	
+	public int getRoles() {
+		return roles;
+	}
+	public void setRoles(int roles) {
+		this.roles = roles;
+	}
+	@Override
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		return null;
+	}	
 }
