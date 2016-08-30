@@ -1,4 +1,12 @@
 <!-- hes -->
+<style>
+#mydetail span{
+	color:#000000 !important;
+}
+.color{
+#color:#000000 !important;
+}
+</style>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 	
@@ -19,7 +27,7 @@
 		<div class="panel panel-info">
 			<div class="panel-heading text-center">ព័តមានលំអិតរបស់ភោជនីយដ្ខាន</div>
 			<div class="panel-body">
-				<div ng-controller="MyAdCtrl">
+				<div ng-controller="MyAdCtrl" id="mydetail">
 					<div ng-repeat="r in restByID">
 
 						<div class="col-md-12">
@@ -38,7 +46,7 @@
 								</center>
 							</div>
 							<center>
-							<span ng-repeat="rating in ratings"> <span>Rating
+							<span ng-repeat="rating in ratings" class="color"> <span>Rating
 									:{{rating.current}}/{{rating.max}}</span> <span star-rating
 								rating-value="rating.current" max="rating.max"
 								on-rating-selected="getSelectedRating(rating)"></span>

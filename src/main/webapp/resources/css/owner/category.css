@@ -119,5 +119,6 @@ div.item {
 }
 .caption {
     display: block;
+    color:#000000 !important;
 }
 	

@@ -1,6 +1,9 @@
  <!-- Start Restaurant Category -->
  
  <style>
+ .caption{
+ color:#000000;
+ }
 #div0{
 			margin-top:3px;
 			float: left;
@@ -56,13 +59,13 @@
 			<div id="div1" class="thumbnail item" ng-repeat="c in myCatNP | limitTo:9">
 				<a href="/owner/{{c.id}}">
 					<img  src="${pageContext.request.contextPath}/resources/upload/playlist/img/{{c.img1}}" >
-					    <span class="caption">{{c.name}}</span>
+					    <span class="caption" style="color:#000000;">{{c.name}}</span>
 				</a>
 	     	</div>
 	     	<div id="div2" class="thumbnail item div2" ng-repeat="c in myCatNP | limitTo:myCat.length:7">
 				<a href="/owner/{{c.id}}">
 					<img  src="${pageContext.request.contextPath}/resources/upload/playlist/img/{{c.img1}}" >
-					    <span class="caption">{{c.name}}</span>
+					    <span class="caption" style="color:#000000;">{{c.name}}</span>
 				</a>
 	     	</div>
 	       </div>

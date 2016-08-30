@@ -715,10 +715,8 @@ app
 			    		if(isLogin=="false"){
 			    			$window.location.href="/login";
 			    		}
-			    		
 			    			rest_id =r_id;
 				    		$scope.saveAddToFavorite();
-			    		
 			    		
 			    }
 				  $scope.saveAddToFavorite = function() {
@@ -872,7 +870,23 @@ app.controller('MyCatCtrl', function($scope, $http, $window, $rootScope) {
   $scope.sendRate = function(){
     alert("Thanks for your rates!\n\nFirst Rate: " + $scope.ratings[0].current+"/"+$scope.ratings[0].max
     +"\n"+"Second rate: "+ $scope.ratings[1].current+"/"+$scope.ratings[0].max)
-  }	
+  }
+  $scope.getRestView = function(id){
+	  alert("RestViewClick"+id);
+	  
+  }
+  $scope.saveRestView = function(id){
+	  alert(id);
+  }
+  
+  $scope.countRestView = function(id){
+	  alert(id);
+  }
+  
+  
+  
+  
+  
 });
 
 app.controller('MyTypeCtrl', function($scope, $http, $window, $rootScope) {

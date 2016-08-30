@@ -25,22 +25,21 @@
 			<div class="col-md-8">
 				<div>
 				<a href="/detail/{{cat.id}}">
-						<p style="white-space: nowrap;width: 100%;overflow: hidden;text-overflow: ellipsis;">
-					<span style="font-size: 14px; font-weight: bolder;">{{cat.name}}</span>
-					</p>
+						<b style="white-space: nowrap;width: 100%;overflow: hidden;text-overflow: ellipsis;">
+					{{cat.name}}
+					</b>
 				</div>
 				<div>
-					
 						<div>
-							<span style="font-size: 13px;">{{cat.home}} St
-								{{cat.street}} {{cat.commune}}</span>
+						{{cat.home}} St
+								{{cat.street}} {{cat.commune}}
 						</div>
 						<div>
-							<span style="font-size: 13px;">{{cat.district}}
-								{{cat.city}}</span>
+						{{cat.district}}
+								{{cat.city}}
 						</div> <!-- <div><span style="font-size:13px;">Knowing that items is a JSON container received through a request, so that's why I'm using a key, value method.{{r.city}}</span></div> -->
 						<div ng-repeat="tele in cat.tel | limitTo:1">
-							<span style="font-size: 13px;">Tel: {{tele.tel}}</span>
+							Tel: {{tele.tel}}
 						</div>
 					</a>
 						
@@ -83,22 +82,22 @@
 			<div class="col-md-8">
 				<div>
 				<a href="/detail/{{ty.id}}">
-						<p style="white-space: nowrap;width: 100%;overflow: hidden;text-overflow: ellipsis;">
-					<span style="font-size: 14px; font-weight: bolder;">{{ty.name}}</span>
-					</p>
+						<b style="white-space: nowrap;width: 100%;overflow: hidden;text-overflow: ellipsis;">
+					{{ty.name}}
+					</b>
 				</div>
 				<div>
 					
 						<div>
-							<span style="font-size: 13px;">{{ty.home}} St
-								{{ty.street}} {{ty.commune}}</span>
+							{{ty.home}} St
+								{{ty.street}} {{ty.commune}}
 						</div>
 						<div>
-							<span style="font-size: 13px;">{{cat.district}}
-								{{ty.city}}</span>
+							{{cat.district}}
+								{{ty.city}}
 						</div> <!-- <div><span style="font-size:13px;">Knowing that items is a JSON container received through a request, so that's why I'm using a key, value method.{{r.city}}</span></div> -->
 						<div ng-repeat="tele in cat.tel | limitTo:1">
-							<span style="font-size: 13px;">Tel: {{tele.tel}}</span>
+							Tel: {{tele.tel}}
 						</div>
 					</a>
 					
