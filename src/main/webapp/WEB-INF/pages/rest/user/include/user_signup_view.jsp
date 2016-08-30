@@ -1,5 +1,8 @@
 	
 	<style>
+	.input-group span, i{
+	color:#000000 !important;
+	}
 	.omb_login .omb_loginForm .input-group.i {
     width: 2em;
 }

@@ -42,7 +42,8 @@
 							Tel: {{tele.tel}}
 						</div>
 					</a>
-						<i class="glyphicon glyphicon-eye-open"></i>&nbsp{{cat.views}}
+						<i class="glyphicon glyphicon-eye-open"></i>&nbsp{{cat.views}}&nbsp
+						<i class="fa fa-thumbs-o-up" aria-hidden="true"></i>&nbsp{{cat.likes}}
 						<br>
 							<span ng-repeat="rating in ratings"> 
 							 <span star-rating
@@ -101,6 +102,7 @@
 						</div>
 					</a>
 						<i class="glyphicon glyphicon-eye-open"></i>&nbsp{{ty.views}}
+						<i class="fa fa-thumbs-o-up" aria-hidden="true"></i>&nbsp{{ty.likes}}
 							<span ng-repeat="rating in ratings"> <span star-rating
 								rating-value="rating.current" max="rating.max"
 								on-rating-selected="getSelectedRating(rating)"></span>

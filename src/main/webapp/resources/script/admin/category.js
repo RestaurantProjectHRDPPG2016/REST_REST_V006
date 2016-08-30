@@ -712,12 +712,28 @@ app
 								}
 							}).then(function(response) {
 								console.log(response);
-								$scope.selectCategory();
 							}, function(response) {
 								alert('failed');
 							});
 					  }
 					  
+					  
+					  $scope.updateRestLike = function(id){
+						  alert("like");
+						
+						  $http({
+								url : 'http://localhost:8888/restauant/likes/'+id,
+								method : 'PUT',
+								data : {
+									'id' : id
+								}
+							}).then(function(response) {
+								console.log(response);
+								alet("success");
+							}, function(response) {
+								alert('failed');
+							});
+					  }
 					
 					$scope.rating = 0;
 				    $scope.ratings = [ {

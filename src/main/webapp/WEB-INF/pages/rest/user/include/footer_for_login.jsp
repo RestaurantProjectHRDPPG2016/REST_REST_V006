@@ -2,6 +2,9 @@
 	.myfooter a{
 		font-size: 20px;
 	}
+	.myfooter span{
+	color: #000000 !important;
+	}
 	.myfooter a:hover{
 		font-size: 22px;
 		text-decoration:underline;

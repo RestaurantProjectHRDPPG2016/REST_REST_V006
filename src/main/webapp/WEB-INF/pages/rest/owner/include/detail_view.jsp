@@ -105,7 +105,9 @@
 									<span class="btn btn-default btn-sm" ng-click="addtoFaorite(r.id)">Add to favorite &nbsp
 										<span class="glyphicon glyphicon-bookmark"></span>
 									</span>
-									&nbsp&nbsp	<i class="glyphicon glyphicon-eye-open"></i>&nbsp{{r.views}}
+									&nbsp
+									<button class="btn btn-default btn-sm" ng-click="updateRestLike(r.id)"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>&nbspLike</button>&nbsp{{r.likes}}&nbsp&nbspបានចូលចិត្ត
+									&nbsp&nbsp	<i class="glyphicon glyphicon-eye-open"></i>&nbsp{{r.views}}&nbspបានមើល
 											<hr>
 										<!-- *****LIKEand Share****** -->
 								
@@ -142,7 +144,6 @@
 
 <script
 	src="${pageContext.request.contextPath}/resources/script/owner/lightbox.js"></script>
-
 <script>
 		rest_id = "${id}";
 		

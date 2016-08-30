@@ -13,7 +13,7 @@
 	opacity:1 !important;
 	
 }
-.unactive a,span{
+.inactive a,span{
 	color:#ffffff !important;
 }
 .collapse ul li a,span{

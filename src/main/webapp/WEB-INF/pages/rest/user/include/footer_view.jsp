@@ -2,6 +2,9 @@
 	.myfooter a{
 		font-size: 16px;
 	}
+	.myfooter span{
+	color:#000000 !important;
+	}
 </style>
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"

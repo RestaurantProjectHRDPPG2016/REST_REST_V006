@@ -1,18 +1,4 @@
 
-<script type="text/javascript">
-var app = angular.module('myApp', []);
-	app.controller('navCtrl', function($scope) {
-		$scope.isActive = function(path) {
-			if (contextPath.indexOf(path) > 0) {
-
-				return true;
-			} else {
-
-				return false;
-			}
-
-		}
-	});
 <style>
 panel
  
@@ -123,5 +109,20 @@ with-nav-tabs
 		</div>
 	</div>
 </div>
-</script>
+<!-- 
+<script type="text/javascript">
+var app = angular.module('myApp', []);
+	app.controller('navCtrl', function($scope) {
+		$scope.isActive = function(path) {
+			if (contextPath.indexOf(path) > 0) {
+
+				return true;
+			} else {
+
+				return false;
+			}
+
+		}
+	});
+	</script> -->
 
