@@ -11,7 +11,7 @@ $(document).ready(function() {
 	});
 
 	$("#location").click(function() {
-		$("#	mylocation").toggle();
+		$("#mylocation").toggle();
 	});
 
 	$(document).on('mouseenter', '.default', function() {
@@ -435,10 +435,14 @@ app.controller('restCtrl',function($scope, $http, $window, $rootScope) {
 								+ $scope.filter.commune;
 
 					}
-					
-					$scope.searchRestAdmin = function(){
-						alert("Search");
+					$scope.searchforAdmin = function() {
+						$scope.filter.name = ($scope.nameadminsearchrest == undefined) ? ''
+								: $scope.nameadminsearchrest;
+
+						$window.location.href = "/admin/restaurant/search?name="
+								+ $scope.filter.name;
 					}
+					
 
 					// TODO: Reload data again
 					$scope.reload = function(filter) {
@@ -698,18 +702,6 @@ app
 					    +"\n"+"Second rate: "+ $scope.ratings[1].current+"/"+$scope.ratings[0].max)
 					  }
 					  
-					  $scope.getRestView = function(id){
-							$http({
-								url : 'http://localhost:8888/restauant/views/'+id,
-								method : 'GET'
-							}).then(function(response) {
-									console.log(response);
-							}, function(response) {
-								alert('failed To call all data');
-							}); 
-						  
-					  }
-					  
 					  $scope.updateRestView = function(id){
 						
 						  $http({
@@ -914,20 +906,7 @@ app.controller('MyCatCtrl', function($scope, $http, $window, $rootScope) {
         max: 5
     }];
     }
-//    ************Number of View***********
-    $scope.getRestView = function(id){
-		$http({
-			url : 'http://localhost:8888/restauant/views/'+id,
-			method : 'GET'
-		}).then(function(response) {
-				console.log(response);
-				$scope.restView = response.data.DATA;
-		}, function(response) {
-			alert('failed To call all data');
-		}); 
-	  
-  }   
-    
+
 });
 
 app.controller('MyTypeCtrl', function($scope, $http, $window, $rootScope) {
@@ -953,20 +932,6 @@ app.controller('MyTypeCtrl', function($scope, $http, $window, $rootScope) {
 		RESTAURANT.getRestaurantByType(type_id);
 	};
 	RESTAURANT.getRestaurantByType(type_id);
-	
-//	***********NUMber of view***********
-	 $scope.getRestView = function(id){
-			$http({
-				url : 'http://localhost:8888/restauant/views/'+id,
-				method : 'GET'
-			}).then(function(response) {
-				$scope.restView = response.data.DATA;
-			}, function(response) {
-				alert('failed To call all data');
-			}); 
-		  
-	  }
-
 });
 
 //***************USER ADD To Favorite Ctrl*******

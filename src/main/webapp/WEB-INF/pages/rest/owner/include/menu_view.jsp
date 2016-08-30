@@ -42,7 +42,8 @@
 							Tel: {{tele.tel}}
 						</div>
 					</a>
-						<span class="glyphicon glyphicon-eye-open"></span>&nbspViews :{{DATA}}
+						<i class="glyphicon glyphicon-eye-open"></i>&nbsp{{cat.views}}
+						<br>
 							<span ng-repeat="rating in ratings"> 
 							 <span star-rating
 								rating-value="rating.current" max="rating.max"
@@ -92,14 +93,14 @@
 								{{ty.street}} {{ty.commune}}
 						</div>
 						<div>
-							{{cat.district}}
+							{{ty.district}}
 								{{ty.city}}
 						</div> <!-- <div><span style="font-size:13px;">Knowing that items is a JSON container received through a request, so that's why I'm using a key, value method.{{r.city}}</span></div> -->
 						<div ng-repeat="tele in cat.tel | limitTo:1">
 							Tel: {{tele.tel}}
 						</div>
 					</a>
-					
+						<i class="glyphicon glyphicon-eye-open"></i>&nbsp{{ty.views}}
 							<span ng-repeat="rating in ratings"> <span star-rating
 								rating-value="rating.current" max="rating.max"
 								on-rating-selected="getSelectedRating(rating)"></span>

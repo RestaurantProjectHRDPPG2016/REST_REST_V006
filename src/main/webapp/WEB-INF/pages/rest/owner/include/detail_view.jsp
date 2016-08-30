@@ -98,7 +98,6 @@
 				</div>
 							<div class="col-md-12">
 								<div class="col-md-12">
-							
 								<br>
 										<a href="/locations/{{r.id}}" id="map">
 											<span id="viewMap" class="btn btn-default btn-sm">Visit Map &nbsp<span class="glyphicon glyphicon-map-marker"></span></span>
@@ -106,6 +105,7 @@
 									<span class="btn btn-default btn-sm" ng-click="addtoFaorite(r.id)">Add to favorite &nbsp
 										<span class="glyphicon glyphicon-bookmark"></span>
 									</span>
+									&nbsp&nbsp	<i class="glyphicon glyphicon-eye-open"></i>&nbsp{{r.views}}
 											<hr>
 										<!-- *****LIKEand Share****** -->
 								

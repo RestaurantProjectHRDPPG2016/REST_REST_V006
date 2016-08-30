@@ -38,7 +38,6 @@ public class OwnerController {
 			@RequestParam(value="commune", required=false) String commune,
 			ModelMap model) {
 		
-		System.out.println(name + ", " + category + ", " + province + ", " + district + ", " + commune);
 		model.addAttribute("name", name);
 		model.addAttribute("category", category);
 		model.addAttribute("province", province);

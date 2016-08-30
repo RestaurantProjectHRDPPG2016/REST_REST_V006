@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping(value="/admin")
@@ -19,6 +20,11 @@ public class AdminController {
 	@RequestMapping(value="/category")
 	public String category(){
 		return "admin/layout/category_view";
+	}
+	@RequestMapping(value="/restaurant/search")
+	public String restaurant(@RequestParam(value="name", required=false) String name,	ModelMap model){
+		model.addAttribute("name", name);
+		return "admin/layout/search_restaurant_view";
 	}
 	@RequestMapping(value="/restaurant")
 	public String restaurant(){

@@ -1,0 +1,1 @@
+<%@include file="../include/search_restaurant_view.jsp"%>

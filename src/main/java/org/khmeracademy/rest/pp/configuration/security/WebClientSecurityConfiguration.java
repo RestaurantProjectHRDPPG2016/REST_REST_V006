@@ -41,7 +41,8 @@ public class WebClientSecurityConfiguration extends WebSecurityConfigurerAdapter
 		
 		http.authorizeRequests()
 			.antMatchers("/admin/**").hasAnyRole("ADMIN")
-			.antMatchers("/user/**").hasAnyRole("ADMIN", "USER");
+			.antMatchers("/user/**").hasAnyRole("ADMIN", "USER")
+			.antMatchers("/owner/**").hasAnyRole("ADMIN", "USER");
 		
 		//TODO: DISABLE CROSS SIDE REQUEST FERGERY
 		http.csrf().disable();
@@ -53,6 +54,17 @@ public class WebClientSecurityConfiguration extends WebSecurityConfigurerAdapter
 			.passwordParameter("password")
 			.successHandler(successHandler)
 			.permitAll();
+		http.sessionManagement()
+			.sessionAuthenticationErrorUrl("/login")
+			.maximumSessions(1)
+			.maxSessionsPreventsLogin(true)
+			.expiredUrl("/login")
+			;
+		http.logout()
+			.logoutUrl("/logout")
+			.logoutSuccessUrl("/home")
+			.permitAll();
+			
 	}
 	
 	/*public static void main(String args[]){

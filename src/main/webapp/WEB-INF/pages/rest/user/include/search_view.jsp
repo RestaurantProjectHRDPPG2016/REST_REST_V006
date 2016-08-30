@@ -105,7 +105,7 @@
 
 </div>
 </div>
-  <div id="out" style="display:none"></div>
+  <div id="out" style="display:block"></div>
 <script>
 
 

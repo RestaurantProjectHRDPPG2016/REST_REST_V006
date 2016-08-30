@@ -1,4 +1,4 @@
-	 
+
 <%@include file="header_view.jsp"%>
 <link rel="stylesheet" type="text/css"
 				href="${pageContext.request.contextPath}/resources/static/jQuery.filer/fancybox/source/jquery.fancybox.css?v=2.1.5"/>	
@@ -30,8 +30,8 @@
 <%-- <%@include file="menu_top_view.jsp" %> --%>
 <%@include file="menu_right_view.jsp"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<div id="page-wrapper" ng-controller="restCtrl">
+	pageEncoding="UTF-8"%>
+	<div id="page-wrapper" ng-controller="restCtrl">
 	<div class="container-fluid">
 		<!-- Page Heading -->
 		<div class="row">
@@ -62,7 +62,7 @@
                     </div>
                  
                 </div>   
-                     <div>&nbsp</div>
+                <div>&nbsp</div>
 				<div class="table-responsive">
 
 					<button class="btn btn-success" data-toggle="modal"
@@ -309,10 +309,8 @@
 			</div>
 			</div>
 		</div>
-<!-- /#wrapper -->
-<%@include file="footer_view.jsp"%>
+	<%@include file="footer_view.jsp"%>
 <script>
 nameadminsearchrest= "${nameadminsearchrest}";
+alert(nameadminsearchrest);
 </script>
-
- 
