@@ -86,6 +86,4 @@ public class Member implements UserDetails {
 		return email;
 	}
 	
-
-	
 }

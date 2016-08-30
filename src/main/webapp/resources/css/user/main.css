@@ -1,4 +1,10 @@
 /* angular JS Star */
+#myprofile i,span{
+	color:#ffffff;
+}
+#myprofile:hover i,span{
+	color:#000000;
+}
 .active{
 	background:#eeeeee;
 }

@@ -27,11 +27,11 @@
      </sec:authorize>
        <sec:authorize access="isAuthenticated()">
      
-						<li class="dropdown" ng-controller="addToFavoriteCtrl">
+						<li class="dropdown" ng-controller="addToFavoriteCtrl" id="myprofile">
 						<a class="dropdown-toggle"
 							data-toggle="dropdown"> 
 							<i class="fa fa-user"></i> 
-							<sec:authentication property="principal.name" />
+							<span><sec:authentication property="principal.name" /></span>
 							 <span class="caret"></span>
 						</a>
 							<ul class="dropdown-menu" id="profile">
