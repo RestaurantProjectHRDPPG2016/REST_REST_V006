@@ -40,6 +40,75 @@ app.controller('navCtrl', function($scope){
 	}
 	//alert(contextPath);
 });
+
+app.controller('userCtrl', function($scope, $http, $window){
+	
+	$scope.getAdmin = function() {
+		$http({
+			url : 'http://localhost:8888/memberAdmin',
+			method : 'GET'
+		}).then(function(response) {
+			$scope.myadmin = response.data.DATA;
+		}, function(response) {
+			alert('failed');
+		});
+	}
+	$scope.getAdmin();
+
+	$scope.addAdmin = function() {
+		$http({
+			url : 'http://localhost:8888/memberAdmin/',
+			method : 'POST',
+			data : {
+				'name' : $scope.username,
+				'email': $scope.email,
+				'password' : $scope.password,
+				'gender' : $scope.gender,
+				'phone' : $scope.phone,
+				'address' : $scope.address
+			}
+		}).then(function(response) {
+			$scope.getUser();
+			aler("success");
+		}, function(response) {
+			alert('failed');
+		});
+	}
+	
+	$scope.getUser = function() {
+		$http({
+			url : 'http://localhost:8888/memberUser',
+			method : 'GET'
+		}).then(function(response) {
+			$scope.myUser = response.data.DATA;
+		}, function(response) {
+			alert('failed');
+		});
+	}
+	$scope.getUser();
+
+	$scope.addUser = function() {
+		$http({
+			url : 'http://localhost:8888/memberUser/',
+			method : 'POST',
+			data : {
+				'name' : $scope.username,
+				'email': $scope.email,
+				'password' : $scope.password,
+				'gender' : $scope.gender,
+				'phone' : $scope.phone,
+				'address' : $scope.address
+			}
+		}).then(function(response) {
+			$scope.getUser();
+			aler("success");
+		}, function(response) {
+			alert('failed');
+		});
+	}
+});
+
+
 app.controller('adminCtrl', function($scope, $http, $window, $rootScope) {
 
 	// TODO: define base url
@@ -1047,5 +1116,7 @@ $('#myModal1').on('hidden.bs.modal', function () {
 	$('#menuSampleInit > span:last-child').after('<input type="file" name="files[]" id="menus" multiple="multiple">');
 	initJqueryFiler(['#img','#menus'], [[],[]]);
 });
+
+/*start user controller */
 
 

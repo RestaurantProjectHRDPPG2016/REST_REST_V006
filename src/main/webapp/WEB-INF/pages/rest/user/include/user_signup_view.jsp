@@ -50,7 +50,7 @@ h2 { color:#333; }
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<div class="container" >
+<div class="container" ng-controller="userCtrl">
 <div class="panel panel-info">
   <div class="panel-heading">  <h1>ចុះឈ្មោះជាមួយ Fresh Menu</h1></div>
    <div class="panel-body">
@@ -66,7 +66,7 @@ h2 { color:#333; }
 			    <label for="email" class="cols-sm-2 control-label">ឈ្មោះ</label>
 					<div class="input-group">
 						<span class="input-group-addon"><i class="fa fa-user"></i></span>
-						<input type="text" class="form-control" name="name" maxlength="20" placeholder="Username">
+						<input type="text" class="form-control" ng-model="name" maxlength="20" placeholder="Username">
 					</div>
 				</div>
 					<span class="help-block"></span>
@@ -74,7 +74,7 @@ h2 { color:#333; }
 					<label for="email" class="cols-sm-2 control-label">អីមែល</label>
 					<div class="input-group">
 						<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-						<input  type="password" class="form-control" name="newpin" maxlength="6" id="pin_id" placeholder="Enter your e-mail address">
+						<input  type="text" class="form-control" ng-model="email"  placeholder="Enter your e-mail address">
 					</div> 
 					</div>
 					   <span class="help-block"></span>
@@ -82,7 +82,7 @@ h2 { color:#333; }
 					<label for="email" class="cols-sm-2 control-label">លេខសំងាត់</label>
 					<div class="input-group">
 						<span class="input-group-addon"><i class="fa fa-lock"></i></span>
-						<input  type="password" class="form-control" name="newpin" maxlength="6" id="pin_id" placeholder="Enter your e-mail address">
+						<input  type="password" class="form-control" ng-model="newpin" maxlength="6" id="pin_id" placeholder="Enter your e-mail address">
 					</div> 
 					</div>
 					   <span class="help-block"></span>
@@ -93,28 +93,21 @@ h2 { color:#333; }
 						<select class="form-control" ng-model="gender">
 						<div class="input-group">
 							<option value="" selected >Gender</option>
-							<option value="ប្រុស">ប្រុស</option>
-							<option value="ស្រី">ស្រី</option>
+							<option value="M">ប្រុស</option>
+							<option value="F">ស្រី</option>
 								</div> 
 						</select>
 					
 					</div>
 					   <span class="help-block"></span>
-					   
-					   	<div>				
-					<label for="email" class="cols-sm-2 control-label">អីមែល</label>
-					<div class="input-group">
-						<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-						<input  type="password" class="form-control" name="newpin" maxlength="6" id="pin_id" placeholder="Enter your e-mail address">
-					</div> 
-					</div>
+				
 					   <span class="help-block"></span>
 					   
 					   	<div>				
 					<label for="email" class="cols-sm-2 control-label">លេខទូរស័ព្ទ</label>
 					<div class="input-group">
 						<span class="input-group-addon"><i class="fa fa-phone" aria-hidden="true"></i></span>
-						<input  type="password" class="form-control" name="newpin" maxlength="6" id="pin_id" placeholder="Enter your e-mail address">
+						<input  type="text" class="form-control" ng-model="phone" maxlength="6" id="pin_id" placeholder="Enter your e-mail address">
 					</div> 
 					</div>
 					   <span class="help-block"></span>
@@ -126,16 +119,16 @@ h2 { color:#333; }
 					
 
 						  <select class="form-control"
-											name="provinceforsearch" id="provinceforsearch" ng-model="provinceforsearch"
+											ng-model="provinceforsearch" id="provinceforsearch" ng-model="provinceforsearch"
 											ng-change="getDistrict(provinceforsearch)"
 											ng-options="p as p.khmer_name for p in myProvince track by p.id">
-<div class="input-group" >
+					<div class="input-group" >
 											<option value="" style="display: none"> City or Province </option>
-</div> 
+					</div> 
 										</select> 
 					
 					</div>
-					<p></p><a href="/" class="btn btn-lg btn-primary btn-block" type="submit">Register</a></p>
+					<p></p><a href="/" class="btn btn-lg btn-primary btn-block" ng-click="addUser()">Register</a></p>
 					<p>Already have an account</p>
 					<p><a href="/login" class="btn btn-lg btn-default btn-block">Login</a></p>
 				</form>
@@ -147,7 +140,7 @@ h2 { color:#333; }
   					<hr>
   				<div class="panel-body">
   				<center>
-    		<div class="fb-login-button " data-max-rows="1" data-size="large" data-show-faces="false" data-auto-logout-link="false"></div>
+    		<div class="fb-login-button " data-max-rows="1" data-size="large" data-show-faces="false" data-auto-logout-link="false" ng-click="addUser()></div>
     			</center>
     			</div>
     			</div>

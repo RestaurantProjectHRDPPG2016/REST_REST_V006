@@ -125,13 +125,7 @@
                         <a href="/admin/restaurant"><i class="fa fa-fw fa-table"></i> Restaurant</a>
                     </li>
                     <li>
-                        <a href="/admin/location"><i class="fa fa-fw fa-edit"></i>Location</a>
-                    </li>
-                    <li>
                         <a href="/admin/category"><i class="fa fa-fw fa-desktop"></i>Category</a>
-                    </li>
-                    <li>
-                        <a href="/admin/event"><i class="fa fa-fw fa-wrench"></i>Event</a>
                     </li>
                         <li>
                         <a href="/admin/views"><i class="fa fa-fw fa-wrench"></i>Views</a>
@@ -141,13 +135,6 @@
                     </li>
                        <li>
                         <a href="/admin/history"><i class="fa fa-fw fa-wrench"></i>History</a>
-                    </li>
-           
-                    <li>
-                        <a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Blank Page</a>
-                    </li>
-                    <li>
-                        <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
                     </li>
                 </ul>
             </div>

@@ -66,12 +66,13 @@
 				<div class="table-responsive">
 
 					<button class="btn btn-success" data-toggle="modal"
-						data-target="#myModal1" ng-click="addButton()">Add New</button>
+						data-target="#myModal1" ng-click="addButton()"><span class="glyphicon glyphicon-plus"></span>Add New</button>
 					<p>&nbsp</p>
 					<div>
-						<table class="table table-bordered table-hover">
+						<table class="table table-bordered table-hover table-striped">
 							<thead>
 								<tr>
+									<th>Nº</th>
 									<th>Name</th>
 									<th>Type</th>
 									<th>Delivery</th>
@@ -80,14 +81,15 @@
 								</tr>
 							</thead>
 							<tbody>
-								<tr ng-repeat="r in rest">
+								<tr ng-repeat="r in rest" ng-init="myVar = 12">
+									<td>{{($index + ((filter.page - 1) * myVar)) + 1}}</td>
 									<td>{{r.name}}</td>
 									<td>{{r.type}}</td>
 									<td>{{r.delivery}}</td>
 									<td>{{r.desc}}</td>
 							
 									<td>
-										<button class="btn btn-primary" ng-click="deleteRestaurant(r.id)">
+										<button class="btn btn-danger" ng-click="deleteRestaurant(r.id)">
 												<span class="glyphicon glyphicon-trash"></span>
 										</button>
 										
@@ -96,7 +98,7 @@
 												<span class="glyphicon glyphicon-pencil"></span>
 										</button>
 									
-										<a href="restaurant_detail_view/{{r.id}}" class="btn btn-primary">
+										<a href="restaurant_detail_view/{{r.id}}" class="btn btn-info">
 												<span class="glyphicon glyphicon-level-up"></span>
 										</a>
 									</td>

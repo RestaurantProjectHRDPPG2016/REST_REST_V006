@@ -27,27 +27,27 @@
       <div class="col-lg-12">
           <h2>Restuarant Category</h2>
                 <div class="table-responsive">
-                     <table class="table table-bordered table-hover">
+                     <table class="table table-bordered table-hover table-striped">
+                     <button class="btn btn-success">
+										<span class="glyphicon glyphicon-plus"  ng-click="changeRestType(1)" data-toggle="modal" data-target="#myRestType1"></span>
+									Add New</button>
                          <thead>
                             <tr>
-                                <th>ID</th>
+                                <th>Nº</th>
                                 <th>Name</th>
                                 <th>Action</th>
                             </tr>
                          </thead>
                           <tbody>
                              <tr ng-repeat="rt in myrestType">
-								<td>{{rt.id}}</td>
+								<td>{{$index+1}}</td>
 								<td>{{rt.name}}</td>
 								<td>
-									<button class="btn btn-primary" ng-click="deleteRestType(rt.id)">
+									<button class="btn btn-danger" ng-click="deleteRestType(rt.id)">
 										<span class="glyphicon glyphicon-trash"></span>
 									</button>
 									 <button class="btn btn-primary" data-toggle="modal" data-target="#myRestType1" ng-click="editRestType(this)">
 										<span class="glyphicon glyphicon-pencil"></span>
-									</button>
-									<button class="btn btn-primary">
-										<span class="glyphicon glyphicon-plus"  ng-click="changeRestType(1)" data-toggle="modal" data-target="#myRestType1"></span>
 									</button>
 									 
 								</td>
@@ -95,10 +95,10 @@
                         <h2>Main Category</h2>
                         <button class="btn btn-success" data-toggle="modal" data-target="#myModal" ng-click="changeMode(0)"><span class="glyphicon glyphicon-plus"></span> Add New Category</button><br>
                         <div class="table-responsive">
-                            <table class="table table-bordered table-hover">
+                            <table class="table table-bordered table-hover table-striped">
                                 <thead>
                                     <tr>
-                                        <th>ID</th>
+                                        <th>Nº</th>
                                         <th>Name</th>
                                         <th>Img1</th>
                                         <th>Img2</th>
@@ -107,13 +107,13 @@
                                 </thead>
                                 <tbody>
                                 <!-- Hello  -->
-                                    <tr ng-repeat="c in myCat">
-                                        <td>{{c.id}}</td>
+                                    <tr ng-repeat="c in myCat" ng-init="myVar = 18">
+                                        <td>{{($index + ((filter.page - 1) * myVar)) + 1}}</td>
                                         <td>{{c.name}}</td>
                                         <td>{{c.img1}}</td>
                                         <td>{{c.img2}}</td>
                                         	<th>
-											<button class="btn btn-primary" ng-click="deleteCategory(c.id)"><span class="glyphicon glyphicon-trash"></span></button>
+											<button class="btn btn-danger" ng-click="deleteCategory(c.id)"><span class="glyphicon glyphicon-trash"></span></button>
 											<button class="btn btn-primary" data-toggle="modal"  data-target="#myModal" ng-click="editCategory(this)"><span class="glyphicon glyphicon-pencil" ></span></button>
 										</th>
                                     </tr>
