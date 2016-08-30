@@ -28,7 +28,7 @@
 			<div class="panel-heading text-center">ព័តមានលំអិតរបស់ភោជនីយដ្ខាន</div>
 			<div class="panel-body">
 				<div ng-controller="MyAdCtrl" id="mydetail">
-					<div ng-repeat="r in restByID">
+					<div ng-repeat="r in restByID" ng-init= "updateRestView(r.id)">
 
 						<div class="col-md-12">
 						<div class="col-md-12">

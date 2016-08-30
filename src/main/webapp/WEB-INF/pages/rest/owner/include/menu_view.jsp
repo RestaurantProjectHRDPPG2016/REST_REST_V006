@@ -8,7 +8,7 @@
 	<!-- ***************************** -->
 	<div class="panel=body" ng-controller="MyCatCtrl">
 		<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12"
-			ng-repeat="cat in MyCategories">
+			ng-repeat="cat in MyCategories" ng-init="getRestView(cat.id)">
 			<div class="col-md-12"  style="border:solid 1px #dddddd; 
 		padding:5px; margin-top:5px; margin-bottom:5px;">
 			<a href="/detail/{{cat.id}}">
@@ -42,13 +42,12 @@
 							Tel: {{tele.tel}}
 						</div>
 					</a>
-						
+						<span class="glyphicon glyphicon-eye-open"></span>&nbspViews :{{DATA}}
 							<span ng-repeat="rating in ratings"> 
 							 <span star-rating
 								rating-value="rating.current" max="rating.max"
 								on-rating-selected="getSelectedRating(rating)"></span>
 							</span> 
-				
 					<div style="margin-bottom: 10px;">
 					</div>
 				</div>

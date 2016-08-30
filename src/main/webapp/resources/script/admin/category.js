@@ -27,6 +27,19 @@ $(document).ready(function() {
 });
 
 var app = angular.module('myApp', []);
+app.controller('navCtrl', function($scope){
+	$scope.isActive = function(path){	
+		if(contextPath.indexOf(path)>0){
+			
+			return true;
+		}else{
+			
+			return false;
+		}
+			
+	}
+	//alert(contextPath);
+});
 app.controller('adminCtrl', function($scope, $http, $window, $rootScope) {
 
 	// TODO: define base url
@@ -678,7 +691,41 @@ app
 							alert('failed To call all data');
 						});
 					}
+					
 					$scope.getRestByID(rest_id);
+					$scope.sendRate = function(){
+					    alert("Thanks for your rates!\n\nFirst Rate: " + $scope.ratings[0].current+"/"+$scope.ratings[0].max
+					    +"\n"+"Second rate: "+ $scope.ratings[1].current+"/"+$scope.ratings[0].max)
+					  }
+					  
+					  $scope.getRestView = function(id){
+							$http({
+								url : 'http://localhost:8888/restauant/views/'+id,
+								method : 'GET'
+							}).then(function(response) {
+									console.log(response);
+							}, function(response) {
+								alert('failed To call all data');
+							}); 
+						  
+					  }
+					  
+					  $scope.updateRestView = function(id){
+						
+						  $http({
+								url : 'http://localhost:8888/restauant/views/'+id,
+								method : 'PUT',
+								data : {
+									'id' : id
+								}
+							}).then(function(response) {
+								console.log(response);
+								$scope.selectCategory();
+							}, function(response) {
+								alert('failed');
+							});
+					  }
+					  
 					
 					$scope.rating = 0;
 				    $scope.ratings = [ {
@@ -834,6 +881,7 @@ app.controller('MyCatCtrl', function($scope, $http, $window, $rootScope) {
 			params : $scope.filter,
 			method : 'GET'
 		}).then(function(response) {
+			console.log(response);
 			$scope.MyCategories = response.data.DATA;
 			RESTAURANT.loadPagination(response.data);
 			if ($scope.MyCategories.length <= 0) {
@@ -866,27 +914,20 @@ app.controller('MyCatCtrl', function($scope, $http, $window, $rootScope) {
         max: 5
     }];
     }
- 
-  $scope.sendRate = function(){
-    alert("Thanks for your rates!\n\nFirst Rate: " + $scope.ratings[0].current+"/"+$scope.ratings[0].max
-    +"\n"+"Second rate: "+ $scope.ratings[1].current+"/"+$scope.ratings[0].max)
-  }
-  $scope.getRestView = function(id){
-	  alert("RestViewClick"+id);
+//    ************Number of View***********
+    $scope.getRestView = function(id){
+		$http({
+			url : 'http://localhost:8888/restauant/views/'+id,
+			method : 'GET'
+		}).then(function(response) {
+				console.log(response);
+				$scope.restView = response.data.DATA;
+		}, function(response) {
+			alert('failed To call all data');
+		}); 
 	  
-  }
-  $scope.saveRestView = function(id){
-	  alert(id);
-  }
-  
-  $scope.countRestView = function(id){
-	  alert(id);
-  }
-  
-  
-  
-  
-  
+  }   
+    
 });
 
 app.controller('MyTypeCtrl', function($scope, $http, $window, $rootScope) {
@@ -912,6 +953,19 @@ app.controller('MyTypeCtrl', function($scope, $http, $window, $rootScope) {
 		RESTAURANT.getRestaurantByType(type_id);
 	};
 	RESTAURANT.getRestaurantByType(type_id);
+	
+//	***********NUMber of view***********
+	 $scope.getRestView = function(id){
+			$http({
+				url : 'http://localhost:8888/restauant/views/'+id,
+				method : 'GET'
+			}).then(function(response) {
+				$scope.restView = response.data.DATA;
+			}, function(response) {
+				alert('failed To call all data');
+			}); 
+		  
+	  }
 
 });
 

@@ -6,7 +6,7 @@
 <div class="container bg-info" id="search">
 <div class="row">
 <div class="col-md-2 col-sm-2 col-xs-3" style="float:left">
-	<a href="/">
+	<a href="/home">
 		<img class="img-responsive" style="padding:10px;" src="${pageContext.request.contextPath}/resources/upload/playlist/img/freshologo.png"/>
 	</a>
 	</div>
