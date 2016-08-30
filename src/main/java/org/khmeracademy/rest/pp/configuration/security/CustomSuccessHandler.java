@@ -35,9 +35,9 @@ public class CustomSuccessHandler extends SimpleUrlAuthenticationSuccessHandler{
 		if(roles.contains("ROLE_ADMIN")){
 			redirectURL = "/admin/dashboard";
 		}else if(roles.contains("ROLE_USER")){
-			redirectURL = "/";
+			redirectURL = "/home";
 		}else{
-			redirectURL = "/";
+			redirectURL = "/home";
 		}
 		
 		response.sendRedirect(redirectURL);
