@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 
 public class MainController {
-	@RequestMapping(value="/home")
+	@RequestMapping(value={"/home","/","index"})
 	public String home(){
 		return "user/layout/home_view";
 	}
